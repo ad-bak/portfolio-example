@@ -1,12 +1,17 @@
 import { styled } from "styled-components";
+import Navbar from "./Navbar";
 
-const Section = styled.section`
+const Section = styled.div`
   height: 100vh;
-  background-color: #cda557;
+  scroll-snap-align: center;
 `;
 
 const Hero = () => {
-  return <Section>Hero</Section>;
+  return (
+    <Section>
+      <Navbar />
+    </Section>
+  );
 };
 
 export default Hero;
