@@ -49,6 +49,7 @@ const Right = styled.div`
     flex: 1;
     width: 100%;
   }
+  position: relative;
 `;
 
 const Title = styled.h1`
@@ -82,10 +83,27 @@ const Button = styled.button`
   border: none;
   padding: 15px;
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 const Img = styled.img`
   height: 90%;
+  width: 90%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  animation: animate 2s infinite ease alternate;
+
+  @keyframes animate {
+    to {
+      transform: translateY(50px);
+    }
+  }
 `;
 
 const Hero = () => {
@@ -94,7 +112,7 @@ const Hero = () => {
       <Navbar />
       <Container>
         <Left>
-          <Title>Think. Make. Solve</Title>
+          <Title>Think. Make. Solve.</Title>
           <WhatWeDo>
             <Line src />
             <Subtitle>What we do</Subtitle>
