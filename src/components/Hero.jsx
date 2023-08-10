@@ -75,42 +75,13 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  position: relative;
   background-color: #c00099;
   color: white;
   font-weight: 500;
   width: 150px;
-  height: 60px;
   border: none;
   padding: 15px;
   border-radius: 20px;
-  overflow: hidden;
-
-  // Pseudo-element for comic-like frame with tiny squares
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 1px,
-        rgba(0, 0, 0, 0.4) 1px,
-        rgba(0, 0, 0, 0.4) 2px
-      ),
-      repeating-linear-gradient(
-        -90deg,
-        transparent,
-        transparent 1px,
-        rgba(0, 0, 0, 0.4) 1px,
-        rgba(0, 0, 0, 0.4) 2px
-      );
-    clip-path: polygon(75% 75%, 100% 75%, 100% 100%, 75% 100%);
-    pointer-events: none;
-  }
 `;
 
 const Img = styled.img`
