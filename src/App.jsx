@@ -6,17 +6,17 @@ import { styled } from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
-  width: 100vw;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow: auto;
+  overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("../public/img/bg.jpeg");
-
-  &&::-webkit-scrollbar {
+  background: url("./img/bg.jpeg");
+  &::-webkit-scrollbar {
     display: none;
   }
+  margin: 0;
+  padding: 0;
 `;
 
 function App() {

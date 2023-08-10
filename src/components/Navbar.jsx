@@ -6,7 +6,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 70vw;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
