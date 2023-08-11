@@ -95,7 +95,7 @@ const Who = () => {
         <Right>
           <Title>Think outside the square space.</Title>
           <WhatWeDo>
-            <Line src />
+            <Line />
             <Subtitle>What we are</Subtitle>
           </WhatWeDo>
           <Desc>

@@ -3,14 +3,23 @@ import { styled } from "styled-components";
 const Section = styled.div`
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`
-  width: 80vw;
+  width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Links = styled.div`
@@ -18,6 +27,25 @@ const Links = styled.div`
   align-items: center;
   gap: 50px;
 `;
+
+const Logo = styled.img`
+  height: 50px;
+`;
+
+const List = styled.ul`
+  display: flex;
+  gap: 20px;
+  list-style: none;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const ListItem = styled.li`
+  cursor: pointer;
+`;
+
 const Icons = styled.div`
   display: flex;
   align-items: center;
@@ -32,26 +60,11 @@ const Icon = styled.img`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #c00099;
+  background-color: #da4ea2;
   color: white;
   border: none;
-  border-radius: 15px;
+  border-radius: 5px;
   cursor: pointer;
-`;
-
-const List = styled.ul`
-  display: flex;
-  gap: 20px;
-  list-style: none;
-`;
-const ListItem = styled.li`
-  cursor: pointer;
-`;
-
-const Logo = styled.img`
-  object-fit: contain;
-  width: 70px;
-  height: 50px;
 `;
 
 const Navbar = () => {
@@ -59,16 +72,17 @@ const Navbar = () => {
     <Section>
       <Container>
         <Links>
-          <Logo src="/img/logo.png" />
+          <Logo src="../../public/img/logo.png" />
+
           <List>
             <ListItem>Home</ListItem>
-            <ListItem>Home</ListItem>
-            <ListItem>Home</ListItem>
-            <ListItem>Home</ListItem>
+            <ListItem>Studio</ListItem>
+            <ListItem>Works</ListItem>
+            <ListItem>Contact</ListItem>
           </List>
         </Links>
         <Icons>
-          <Icon src="/img/search.png" />
+          <Icon src="../../public/img/search.png" />
           <Button>Hire Now</Button>
         </Icons>
       </Container>

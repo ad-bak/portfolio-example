@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
 import Contact from "./components/Contact";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
@@ -16,7 +16,6 @@ const Container = styled.div`
     display: none;
   }
   margin: 0;
-  padding: 0;
 `;
 
 function App() {

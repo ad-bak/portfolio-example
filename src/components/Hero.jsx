@@ -1,5 +1,8 @@
 import { styled } from "styled-components";
 import Navbar from "./Navbar";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useState } from "react";
 
 const Section = styled.div`
   height: 100vh;
@@ -17,7 +20,7 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100%;
   scroll-snap-align: center;
-  width: 80vw;
+  width: 90vw;
   display: flex;
   justify-content: space-between;
 
@@ -107,6 +110,22 @@ const Img = styled.img`
 `;
 
 const Hero = () => {
+  const [scale, setScale] = useState(2.8);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1060) {
+        setScale(2);
+      } else {
+        setScale(2.8);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <Section>
       <Navbar />
@@ -123,6 +142,21 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
+          <Canvas>
+            <Suspense fallback={null}>
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 100, 200]} scale={scale}>
+                <MeshDistortMaterial
+                  color="#3d1c56"
+                  attach="material"
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
+            </Suspense>
+          </Canvas>
           <Img src="/img/moon.png" />
         </Right>
       </Container>
