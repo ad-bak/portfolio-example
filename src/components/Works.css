@@ -1,0 +1,80 @@
+.section {
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.container {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+    padding: 20px;
+    justify-content: center;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list-item {
+  font-size: 90px;
+  font-weight: bold;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .list-item {
+    font-size: 24px;
+    color: white;
+    -webkit-text-stroke: 0px;
+  }
+}
+
+.list-item::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: pink;
+  width: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list-item:hover::after {
+  width: 100%;
+  transition: width 0.5s linear;
+}
+
+.right {
+  flex: 1;
+}
