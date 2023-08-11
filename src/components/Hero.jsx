@@ -123,7 +123,7 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          <Img src="../../public/img/moon.png" />
+          <Img src="/img/moon.png" />
         </Right>
       </Container>
     </Section>
