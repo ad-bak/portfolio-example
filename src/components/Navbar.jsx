@@ -3,14 +3,11 @@ import { styled } from "styled-components";
 const Section = styled.div`
   display: flex;
   justify-content: center;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   align-items: center;

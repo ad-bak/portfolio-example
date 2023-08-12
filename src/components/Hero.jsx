@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { styled } from "styled-components";
 import Navbar from "./Navbar";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
@@ -114,7 +115,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 1060) {
+      if (window.innerWidth <= 1200) {
         setScale(2);
       } else {
         setScale(2.8);
